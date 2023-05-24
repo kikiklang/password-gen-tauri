@@ -12,7 +12,7 @@ async function generatePassword() {
 
 <template>
   <div class="card">
-    <button type="button" @click="generatePassword()">Generate</button>
+    <button type="button" @click="generatePassword()">GO</button>
   </div>
 
   <p>{{ password }}</p>
