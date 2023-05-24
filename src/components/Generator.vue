@@ -11,7 +11,7 @@ async function generatePassword() {
 </script>
 
 <template>
-  <div class="card">
+  <div>
     <button type="button" @click="generatePassword()">GO</button>
   </div>
 
