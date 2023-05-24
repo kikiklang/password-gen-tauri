@@ -6,13 +6,11 @@ import Generator from "./components/Generator.vue";
 
 <template>
   <div class="container">
-    <img class="logo" src="./assets/logo.svg" alt="" srcset="">
+    <img class="logo" src="./assets/app-icon.png" alt="" srcset="">
+    <h1>PassGen</h1>
 
     <p>Click on the button to generate a password.</p>
 
     <Generator />
   </div>
 </template>
-
-<style scoped>
-</style>
