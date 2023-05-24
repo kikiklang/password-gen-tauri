@@ -4,22 +4,21 @@
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 
+fn generate_password(length: usize, numbers: bool, lowercase_letters: bool, uppercase_letters: bool, symbols: bool, spaces: bool, exclude_similar_characters: bool, strict: bool) -> String {
+    use passwords::PasswordGenerator;
+    let pg = PasswordGenerator {
+        length,
+        numbers,
+        lowercase_letters,
+        uppercase_letters,
+        symbols,
+        spaces,
+        exclude_similar_characters,
+        strict,
+    };
 
-fn generate_password(length: usize) -> String {
-    use rand::{thread_rng, Rng};
-
-    const CHARSET: &[u8] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
-    let charset_length = CHARSET.len();
-    
-    let mut rng = thread_rng();
-    let password: String = (0..length)
-        .map(|_| {
-            let random_index = rng.gen_range(0..charset_length);
-            CHARSET[random_index] as char
-        })
-        .collect();
-
-    password
+    let generated_password = pg.generate_one().unwrap();
+    generated_password
 }
 
 fn main() {
