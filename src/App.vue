@@ -6,7 +6,7 @@ import Greet from "./components/Greet.vue";
 
 <template>
   <div class="container">
-    <h1>Welcome to Password GEN!</h1>
+    <img class="logo" src="./assets/logo.svg" alt="" srcset="">
 
     <p>Click on the button to generate a password.</p>
 
@@ -15,11 +15,4 @@ import Greet from "./components/Greet.vue";
 </template>
 
 <style scoped>
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #249b73);
-}
 </style>

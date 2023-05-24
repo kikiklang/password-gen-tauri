@@ -2,19 +2,18 @@
 import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/tauri";
 
-const greetMsg = ref("");
-const name = ref("");
+const password = ref("");
 
-async function greet() {
+async function generatePassword() {
   // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-  greetMsg.value = await invoke("generate_password", { length: 16 });
+  password.value = await invoke("generate_password", { length: 16 });
 }
 </script>
 
 <template>
   <div class="card">
-    <button type="button" @click="greet()">Generate</button>
+    <button type="button" @click="generatePassword()">Generate</button>
   </div>
 
-  <p>{{ greetMsg }}</p>
+  <p>{{ password }}</p>
 </template>
